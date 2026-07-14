@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case Assistente de Protocolos Clínicos — geração assistida de protocolos a partir do contexto clínico e de análises laboratoriais.">
+  <title>Assistente de Protocolos Clínicos — Lucas Maciel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=8"><link rel="stylesheet" href="case.css?v=7">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html">Lucas Maciel</a><nav class="main-nav"><a href="index.html#inicio">Início</a><a href="about.html">Sobre</a><a href="index.html#projetos">Projetos</a><a href="index.html#stack">Stack</a><a href="#contato">Contato</a></nav><div class="header-actions"><a class="icon-link" href="mailto:souzamaciel.lucas@gmail.com" aria-label="Enviar e-mail"><svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6"/></svg></a><a class="icon-link" href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6 9v9M6 6.5v.01M10 18v-5c0-2 1-3.5 3.5-3.5S18 11 18 13v5M10 10v8"/></svg></a></div><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button></header>
+
+  <main class="case-main">
+    <a class="back-link" href="index.html#projetos">← Todos os projetos</a>
+    <article class="case-content">
+      <header class="case-intro">
+        <p class="eyebrow">AI Healthcare · Prescrição assistida</p>
+        <h1>Assistente de Protocolos Clínicos</h1>
+        <p class="case-subtitle">Do contexto clínico a uma proposta de protocolo com revisão médica</p>
+      </header>
+
+      <section class="tldr" aria-label="Resumo executivo do projeto">
+        <p class="tldr-label">Visão geral</p>
+        <p class="tldr-summary">Estruturei uma solução de IA capaz de combinar as informações do prontuário e as análises laboratoriais estruturadas para gerar propostas editáveis de protocolos. O projeto nasceu de forma independente e posteriormente foi integrado ao Copiloto de Prontuário.</p>
+        <dl class="tldr-facts">
+          <div><dt>Meu papel</dt><dd>Product Owner · UX/UI Design</dd></div>
+          <div><dt>Segmento</dt><dd>AI Healthcare · Prescrição</dd></div>
+          <div><dt>Principais entregas</dt><dd>Discovery · Fluxos · UX/UI · Regras de negócio · Prototipação · Human-in-the-loop</dd></div>
+        </dl>
+      </section>
+
+      <figure class="case-hero prescription-hero"><img src="assets/protocolos-clinicos-protocolo.png" alt="Protocolo demonstrativo e anonimizado sugerido pela IA para revisão médica"><figcaption>A IA entrega uma proposta estruturada; o médico revisa e decide.</figcaption></figure>
+
+      <section class="case-section"><h2>O produto</h2><div><p>O Assistente de Protocolos Clínicos é uma solução criada para apoiar médicos na elaboração de protocolos terapêuticos. A experiência reúne o contexto clínico do paciente, informações complementares e análises laboratoriais para gerar uma primeira proposta estruturada.</p><p>O profissional pode reutilizar uma análise já realizada pela solução de Análise Laboratorial Inteligente ou analisar um novo exame antes da geração. A proposta permanece editável e só é incorporada ao fluxo clínico após revisão e aprovação médica.</p></div></section>
+
+      <section class="case-section"><h2>Origem e evolução</h2><p>O projeto começou como uma iniciativa independente focada em prescrição assistida. À medida que a solução evoluiu, ficou claro que a geração de protocolos fazia mais sentido conectada ao prontuário e aos demais recursos da assistente clínica. Seus principais fluxos foram posteriormente integrados ao Copiloto de Prontuário.</p></section>
+
+      <section class="case-section"><h2>O problema</h2><p>Elaborar um protocolo exige reconstruir o contexto do paciente a partir de sintomas, histórico, tratamentos anteriores, evoluções e exames. Essas informações estavam distribuídas em diferentes pontos e precisavam ser transformadas manualmente em uma prescrição coerente. O desafio era reduzir esse esforço sem ocultar os insumos utilizados ou retirar do médico o controle sobre a decisão.</p></section>
+
+      <section class="case-section"><h2>Minha atuação</h2><div><p>Atuei na estruturação do produto e da experiência, conectando as fontes clínicas ao fluxo de geração, edição e aprovação.</p><ul><li>mapeamento das informações necessárias para contextualizar a IA;</li><li>definição do fluxo de seleção ou realização de uma análise laboratorial;</li><li>estruturação dos estados de processamento e geração;</li><li>organização da proposta de protocolo em campos editáveis;</li><li>definição das ações para cancelar, gerar novamente, ajustar e aprovar;</li><li>criação dos fluxos e protótipos no Figma;</li><li>definição de regras para manter a revisão médica obrigatória;</li><li>preparação da experiência para integração ao Copiloto de Prontuário.</li></ul></div></section>
+
+      <section class="process-section">
+        <div class="decision-heading"><p class="eyebrow">Do dado à decisão</p><h2>Como a solução funcionava</h2><p>O protocolo era consequência de um fluxo que tornava visíveis as fontes utilizadas e os pontos de decisão do médico.</p></div>
+        <ol class="process-flow">
+          <li><span>01</span><b>Consolidação do contexto clínico</b></li>
+          <li><span>02</span><b>Seleção de uma análise existente ou envio de um novo exame</b></li>
+          <li><span>03</span><b>Análise laboratorial estruturada</b></li>
+          <li><span>04</span><b>Geração da proposta de protocolo pela IA</b></li>
+          <li><span>05</span><b>Edição direta ou ajustes solicitados por meio do chat</b></li>
+          <li><span>06</span><b>Revisão e aprovação médica</b></li>
+          <li><span>07</span><b>Registro do protocolo no fluxo clínico</b></li>
+        </ol>
+      </section>
+
+      <section class="context-section">
+        <div class="decision-heading"><p class="eyebrow">Integração entre produtos</p><h2>A análise laboratorial como insumo para a IA</h2><p>O exame em PDF não era utilizado como uma fonte isolada. Primeiro, a solução de Análise Laboratorial Inteligente transformava o documento em uma análise estruturada e rastreável.</p></div>
+        <div class="context-stack" aria-label="Fluxo entre exame, análise laboratorial e assistente de protocolos clínicos">
+          <div>Exame em PDF</div><span>→</span><div>Análise Laboratorial</div><span>→</span><div>Análise estruturada</div><i>↓</i><strong>Assistente de Protocolos</strong><i>↓</i><strong class="validated">Revisão e aprovação médica</strong>
+        </div>
+      </section>
+
+      <section class="case-section"><h2>Resultado esperado</h2><p>Reduzir o esforço necessário para reunir informações e estruturar uma proposta de protocolo, reaproveitar análises já realizadas, evitar processamento duplicado e permitir que o médico concentre sua atenção na avaliação e nos ajustes clínicos. A integração posterior com o Copiloto de Prontuário também transformou uma solução isolada em uma capacidade conectada ao restante da jornada.</p></section>
+
+      <section class="decision-section">
+        <div class="decision-heading"><p class="eyebrow">Decisões antes das telas</p><h2>Principais decisões de produto</h2><p>O valor da solução dependia menos de gerar uma resposta e mais de controlar quais informações alimentavam a IA, como a proposta era apresentada e quem tomava a decisão final.</p></div>
+
+        <div class="decision-story-layout" data-case-story>
+          <figure class="decision-product-stage">
+            <div class="decision-stage-meta"><span>Decisão em foco</span><strong data-case-counter>01 / 04</strong></div>
+            <div class="decision-stage-media decision-scenes">
+              <div class="decision-scene scene-context is-active" data-decision-scene="1"><p>Contexto consolidado</p><h4>Informações convergem antes da geração</h4><div class="context-merge"><div><span>Sintomas</span><span>Histórico</span><span>Exames</span><span>Preferências</span></div><i>↓</i><strong>Contexto clínico</strong></div></div>
+              <div class="decision-scene scene-branch" data-decision-scene="2"><p>Escolha explícita</p><h4>Reutilizar ou analisar novamente</h4><div class="branch-flow"><span>Exame necessário</span><i></i><div><strong>Análise existente</strong><b>ou</b><strong>Novo exame</strong></div><i></i><span>Fonte vinculada</span></div></div>
+              <div class="decision-scene scene-structured" data-decision-scene="3"><p>Proposta editável</p><h4>Informação pronta para revisão</h4><div class="structured-protocol"><div><b>Substância</b><b>Quantidade</b><b>Frequência</b></div><span></span><span></span><span></span><small>Sessões · Preparação · Observações</small></div></div>
+              <div class="decision-scene scene-versions" data-decision-scene="4"><p>Ajuste com controle</p><h4>A conversa gera uma nova versão</h4><div class="version-flow"><span>Protocolo v1</span><i>+</i><span>Ajuste no chat</span><i>→</i><span>Protocolo v2</span><i>→</i><strong>Aprovação médica</strong></div></div>
+            </div>
+            <figcaption data-case-caption>Consolidar o contexto antes de gerar</figcaption>
+          </figure>
+          <div class="decision-story-steps">
+
+        <article class="decision-item decision-text-only is-active" data-case-decision="1" data-focus-x="50" data-focus-y="18" data-focus-scale="1.05">
+          <div class="decision-copy"><span>01</span><h3>Consolidar o contexto antes de gerar</h3><p>Queixas, histórico médico e familiar, prescrições anteriores, anamneses e preferências clínicas foram organizados em uma única experiência. O objetivo era reduzir lacunas e tornar explícito o contexto considerado pela IA.</p></div>
+        </article>
+
+        <article class="decision-item decision-text-only" data-case-decision="2" data-focus-x="20" data-focus-y="70" data-focus-scale="1.18">
+          <div class="decision-copy"><span>02</span><h3>Reutilizar uma análise ou realizar uma nova</h3><p>O médico podia selecionar uma análise laboratorial existente ou enviar um novo exame. Essa possibilidade evitava o trabalho duplicado e mantinha o vínculo entre a fonte laboratorial e o protocolo gerado.</p></div>
+        </article>
+
+        <article class="decision-item decision-text-only" data-case-decision="3" data-focus-x="50" data-focus-y="48" data-focus-scale="1.12">
+          <div class="decision-copy"><span>03</span><h3>Entregar uma proposta estruturada e editável</h3><p>A IA organizava substâncias, quantidades, sessões, frequência e preparação em campos que podiam ser revisados. O médico não recebia um texto fechado, mas uma base operacional para avaliação.</p></div>
+        </article>
+
+        <article class="decision-item decision-text-only" data-case-decision="4" data-focus-x="75" data-focus-y="83" data-focus-scale="1.2">
+          <div class="decision-copy"><span>04</span><h3>Permitir ajustes sem perder o controle</h3><p>Além da edição direta, o profissional podia solicitar mudanças pelo chat e gerar uma nova versão personalizada. A flexibilidade conversacional não substituía a etapa explícita de aprovação.</p></div>
+        </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section"><h2>Competências demonstradas</h2><ul><li>AI Product</li><li>Product Discovery</li><li>Definição de escopo</li><li>Integração entre produtos</li><li>User Flows</li><li>Arquitetura da informação</li><li>UX/UI Design</li><li>Prototipação em Figma</li><li>Regras de negócio</li><li>Estados de processamento</li><li>Human-in-the-loop</li><li>Produtos de healthcare</li></ul></section>
+
+      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, prompts, regras clínicas, documentos internos e especificações proprietárias não são apresentados. O case resume a experiência e as principais decisões de produto sem expor dados sensíveis ou lógica clínica proprietária.</p></aside>
+    </article>
+  </main>
+
+  <footer id="contato"><div class="footer-top"><div><h2>Lucas Maciel</h2><p>Product Owner &amp; UX/UI Designer</p></div><div class="footer-contact"><a href="mailto:souzamaciel.lucas@gmail.com">souzamaciel.lucas@gmail.com</a><a href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div><p class="copyright">© 2026 Lucas Maciel — Product Owner &amp; UX/UI Designer</p></footer>
+  <script src="script.js?v=8"></script>
+</body></html>
