@@ -4,7 +4,7 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Case Assistente de Protocolos Clínicos — geração assistida de protocolos a partir do contexto clínico e de análises laboratoriais.">
   <title>Assistente de Protocolos Clínicos — Lucas Maciel</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=8"><link rel="stylesheet" href="case.css?v=7">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=18"><link rel="stylesheet" href="case.css?v=11">
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html">Lucas Maciel</a><nav class="main-nav"><a href="index.html#inicio">Início</a><a href="about.html">Sobre</a><a href="index.html#projetos">Projetos</a><a href="index.html#stack">Stack</a><a href="#contato">Contato</a></nav><div class="header-actions"><a class="icon-link" href="mailto:souzamaciel.lucas@gmail.com" aria-label="Enviar e-mail"><svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6"/></svg></a><a class="icon-link" href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6 9v9M6 6.5v.01M10 18v-5c0-2 1-3.5 3.5-3.5S18 11 18 13v5M10 10v8"/></svg></a></div><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button></header>
@@ -28,7 +28,20 @@
         </dl>
       </section>
 
-      <figure class="case-hero prescription-hero"><img src="assets/protocolos-clinicos-protocolo.png" alt="Protocolo demonstrativo e anonimizado sugerido pela IA para revisão médica"><figcaption>A IA entrega uma proposta estruturada; o médico revisa e decide.</figcaption></figure>
+      <figure class="case-hero concept-product-hero protocol-concept-hero">
+        <div class="product-concept" role="img" aria-label="Interface conceitual de assistente de protocolos com contexto, proposta editável, ajustes e aprovação médica">
+          <aside class="product-rail" aria-hidden="true"><div class="product-mark"></div><nav><i class="is-current"></i><i></i><i></i><i></i></nav><span>LM</span></aside>
+          <div class="product-space">
+            <header class="product-top"><div><small>Proposta de protocolo</small><strong>Paciente 083 · Versão 02</strong></div><div><span class="concept-badge">Dados fictícios</span><b class="draft-status">Rascunho para revisão</b></div></header>
+            <div class="protocol-layout">
+              <section class="concept-panel context-panel"><header><div><small>Contexto considerado</small><strong>Fontes vinculadas</strong></div><span>4 fontes</span></header><div class="context-list"><p><i>✓</i><span><b>Resumo do prontuário</b><small>Atualizado em 14 jul</small></span></p><p><i>✓</i><span><b>Análise laboratorial 024</b><small>12 indicadores estruturados</small></span></p><p><i>✓</i><span><b>Preferências registradas</b><small>2 observações demonstrativas</small></span></p><p><i>✓</i><span><b>Histórico de protocolos</b><small>1 versão anterior</small></span></p></div><button type="button" class="source-button">Ver fontes originais</button></section>
+              <section class="concept-panel protocol-editor"><header><div><small>Proposta gerada pela IA</small><strong>Estrutura editável</strong></div><span class="status-pill">Versão 02</span></header><div class="protocol-table"><div class="table-head"><span>Item</span><span>Quantidade</span><span>Frequência</span></div><div><b>Componente A</b><span>10 u.d.</span><span>1× por ciclo</span></div><div><b>Componente B</b><span>05 u.d.</span><span>2× por ciclo</span></div><div><b>Componente C</b><span>08 u.d.</span><span>1× por ciclo</span></div></div><div class="protocol-notes"><small>Observações para revisão</small><p>Conteúdo demonstrativo. Confirmar itens, quantidades e frequência antes da aprovação.</p></div><div class="review-actions"><button type="button">Solicitar ajuste</button><button type="button">Aprovar protocolo</button></div></section>
+              <section class="concept-panel adjustment-panel"><span>✦ Ajuste assistido</span><p>“Organize os itens por etapa e destaque o que mudou nesta versão.”</p><small>Nova versão gerada sem alterar a anterior.</small></section>
+            </div>
+          </div>
+        </div>
+        <figcaption>Interface conceitual recriada exclusivamente para demonstrar o raciocínio do projeto.</figcaption>
+      </figure>
 
       <section class="case-section"><h2>O produto</h2><div><p>O Assistente de Protocolos Clínicos é uma solução criada para apoiar médicos na elaboração de protocolos terapêuticos. A experiência reúne o contexto clínico do paciente, informações complementares e análises laboratoriais para gerar uma primeira proposta estruturada.</p><p>O profissional pode reutilizar uma análise já realizada pela solução de Análise Laboratorial Inteligente ou analisar um novo exame antes da geração. A proposta permanece editável e só é incorporada ao fluxo clínico após revisão e aprovação médica.</p></div></section>
 
@@ -97,10 +110,10 @@
 
       <section class="skills-section"><h2>Competências demonstradas</h2><ul><li>AI Product</li><li>Product Discovery</li><li>Definição de escopo</li><li>Integração entre produtos</li><li>User Flows</li><li>Arquitetura da informação</li><li>UX/UI Design</li><li>Prototipação em Figma</li><li>Regras de negócio</li><li>Estados de processamento</li><li>Human-in-the-loop</li><li>Produtos de healthcare</li></ul></section>
 
-      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, prompts, regras clínicas, documentos internos e especificações proprietárias não são apresentados. O case resume a experiência e as principais decisões de produto sem expor dados sensíveis ou lógica clínica proprietária.</p></aside>
+      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, telas reais, prompts, regras clínicas e especificações proprietárias não são exibidos. A interface apresentada foi recriada com identidade própria e dados 100% fictícios, exclusivamente para comunicar o raciocínio do projeto sem expor dados sensíveis ou lógica clínica proprietária.</p></aside>
     </article>
   </main>
 
   <footer id="contato"><div class="footer-top"><div><h2>Lucas Maciel</h2><p>Product Owner &amp; UX/UI Designer</p></div><div class="footer-contact"><a href="mailto:souzamaciel.lucas@gmail.com">souzamaciel.lucas@gmail.com</a><a href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div><p class="copyright">© 2026 Lucas Maciel — Product Owner &amp; UX/UI Designer</p></footer>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=10"></script>
 </body></html>

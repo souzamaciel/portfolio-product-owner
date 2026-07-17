@@ -9,15 +9,31 @@ progress.setAttribute('aria-hidden', 'true');
 document.body.prepend(progress);
 
 if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+  const setMenuOpen = open => {
+    nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    document.body.classList.toggle('menu-open', open);
+  };
+
+  toggle.addEventListener('click', () => {
+    setMenuOpen(!nav.classList.contains('open'));
   });
 
   nav.addEventListener('click', event => {
     if (event.target.matches('a')) {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener('click', event => {
+    if (nav.classList.contains('open') && !header?.contains(event.target)) setMenuOpen(false);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      setMenuOpen(false);
+      toggle.focus();
     }
   });
 }
@@ -44,11 +60,15 @@ revealTargets.forEach(element => observer.observe(element));
 const toolCards = [...document.querySelectorAll('.tool')];
 
 toolCards.forEach(card => {
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-pressed', 'false');
+
   card.addEventListener('click', event => {
     event.stopPropagation();
     const shouldActivate = !card.classList.contains('is-active');
     toolCards.forEach(tool => tool.classList.remove('is-active'));
     card.classList.toggle('is-active', shouldActivate);
+    toolCards.forEach(tool => tool.setAttribute('aria-pressed', String(tool.classList.contains('is-active'))));
   });
 
   card.addEventListener('keydown', event => {
@@ -61,17 +81,18 @@ toolCards.forEach(card => {
 
 document.addEventListener('click', () => {
   toolCards.forEach(card => card.classList.remove('is-active'));
+  toolCards.forEach(card => card.setAttribute('aria-pressed', 'false'));
 });
 
 const heroTitle = document.querySelector('.hero h1');
 const portrait = document.querySelector('.portrait-wrap img');
-const projectCards = [...document.querySelectorAll('.project-card')];
-const parallaxImages = [...document.querySelectorAll('.project-media img, .case-hero img, .decision-visual img')];
+const parallaxImages = [...document.querySelectorAll('.project-media img:not(.case-concept-image), .case-hero img, .decision-visual img')];
 const buildStory = document.querySelector('[data-build-story]');
 const buildSteps = [...document.querySelectorAll('[data-build-step]')];
 const buildLayers = [...document.querySelectorAll('[data-build-layer]')];
 const buildCounter = document.querySelector('[data-build-counter]');
 const caseStories = [...document.querySelectorAll('[data-case-story]')];
+const stageTimers = new WeakMap();
 let ticking = false;
 
 function clamp(value, min, max) {
@@ -163,6 +184,8 @@ function updateCaseStories() {
       story.dataset.activeDecision = String(activeIndex + 1);
       stage.classList.remove('is-changing');
       requestAnimationFrame(() => stage.classList.add('is-changing'));
+      clearTimeout(stageTimers.get(stage));
+      stageTimers.set(stage, setTimeout(() => stage.classList.remove('is-changing'), 700));
     }
   });
 }
@@ -190,17 +213,6 @@ function updateScrollEffects() {
       portrait.style.transform = `translate3d(0, ${(offset - 0.5) * -34}px, 0) scale(1.035)`;
     }
 
-    projectCards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const centerDistance = Math.abs(rect.top + rect.height / 2 - innerHeight / 2);
-      const proximity = 1 - clamp(centerDistance / innerHeight, 0, 1);
-      card.style.setProperty('--card-shift', `${(1 - proximity) * 10}px`);
-      card.style.setProperty('--card-scale', String(0.985 + proximity * 0.015));
-      card.style.setProperty('--card-shadow-y', `${8 + proximity * 18}px`);
-      card.style.setProperty('--card-shadow-blur', `${22 + proximity * 34}px`);
-      card.style.setProperty('--card-shadow-alpha', String(0.025 + proximity * 0.055));
-    });
-
     parallaxImages.forEach(image => {
       const container = image.parentElement;
       const rect = container.getBoundingClientRect();
@@ -224,71 +236,3 @@ function requestScrollUpdate() {
 addEventListener('scroll', requestScrollUpdate, { passive: true });
 addEventListener('resize', requestScrollUpdate, { passive: true });
 updateScrollEffects();
-
-const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-if (finePointer && !reduceMotion) {
-  const cursorDot = document.createElement('div');
-  const cursorRing = document.createElement('div');
-  const cursorLabel = document.createElement('span');
-  cursorDot.className = 'cursor-dot';
-  cursorRing.className = 'cursor-ring';
-  cursorDot.setAttribute('aria-hidden', 'true');
-  cursorRing.setAttribute('aria-hidden', 'true');
-  cursorRing.append(cursorLabel);
-  document.body.append(cursorDot, cursorRing);
-
-  let pointerX = innerWidth / 2;
-  let pointerY = innerHeight / 2;
-  let ringX = pointerX;
-  let ringY = pointerY;
-
-  function renderCursor() {
-    ringX += (pointerX - ringX) * 0.18;
-    ringY += (pointerY - ringY) * 0.18;
-    cursorDot.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0) translate(-50%, -50%)`;
-    cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(renderCursor);
-  }
-
-  addEventListener('pointermove', event => {
-    pointerX = event.clientX;
-    pointerY = event.clientY;
-    document.documentElement.classList.add('cursor-active');
-  }, { passive: true });
-
-  document.documentElement.addEventListener('mouseleave', () => {
-    document.documentElement.classList.remove('cursor-active');
-  });
-
-  document.querySelectorAll('a, button, .tool').forEach(element => {
-    element.addEventListener('pointerenter', () => {
-      const isProject = element.classList.contains('project-card');
-      cursorRing.classList.add('is-interactive');
-      cursorRing.classList.toggle('has-label', isProject);
-      cursorLabel.textContent = isProject ? 'Ver case →' : '';
-    });
-
-    element.addEventListener('pointerleave', () => {
-      cursorRing.classList.remove('is-interactive', 'has-label');
-      cursorLabel.textContent = '';
-    });
-  });
-
-  document.querySelectorAll('.primary-action, .secondary-action, .text-link').forEach(element => {
-    element.classList.add('cursor-magnetic');
-
-    element.addEventListener('pointermove', event => {
-      const rect = element.getBoundingClientRect();
-      const offsetX = event.clientX - (rect.left + rect.width / 2);
-      const offsetY = event.clientY - (rect.top + rect.height / 2);
-      element.style.transform = `translate3d(${clamp(offsetX * 0.12, -7, 7)}px, ${clamp(offsetY * 0.12, -7, 7)}px, 0)`;
-    });
-
-    element.addEventListener('pointerleave', () => {
-      element.style.transform = '';
-    });
-  });
-
-  renderCursor();
-}

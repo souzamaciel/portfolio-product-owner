@@ -4,7 +4,7 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Case Análise Laboratorial Inteligente — IA para interpretação de exames laboratoriais.">
   <title>Análise Laboratorial Inteligente — Lucas Maciel</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=8"><link rel="stylesheet" href="case.css?v=7">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=18"><link rel="stylesheet" href="case.css?v=11">
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html">Lucas Maciel</a><nav class="main-nav"><a href="index.html#inicio">Início</a><a href="about.html">Sobre</a><a href="index.html#projetos">Projetos</a><a href="index.html#stack">Stack</a><a href="#contato">Contato</a></nav><div class="header-actions"><a class="icon-link" href="mailto:souzamaciel.lucas@gmail.com" aria-label="Enviar e-mail"><svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6"/></svg></a><a class="icon-link" href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6 9v9M6 6.5v.01M10 18v-5c0-2 1-3.5 3.5-3.5S18 11 18 13v5M10 10v8"/></svg></a></div><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button></header>
@@ -27,7 +27,54 @@
         </dl>
       </section>
 
-      <figure class="case-hero analysis-hero"><img src="assets/analise-laboratorial.png" alt="Dashboard demonstrativo e anonimizado com biomarcadores e indicadores laboratoriais"><figcaption>Visão estruturada da análise do exame.</figcaption></figure>
+      <figure class="case-hero analysis-hero concept-lab-hero">
+        <div class="lab-concept" role="img" aria-label="Interface conceitual de análise laboratorial com resumo do exame, indicadores priorizados, explicação assistida, faixa de referência, histórico e acesso à fonte original">
+          <aside class="lab-sidebar" aria-hidden="true">
+            <div class="lab-mark"><span></span><b>nexo</b></div>
+            <nav><i class="is-current"></i><i></i><i></i><i></i></nav>
+            <div class="lab-avatar">LM</div>
+          </aside>
+          <div class="lab-workspace">
+            <header class="lab-topbar">
+              <div><span>Análise de exame</span><strong>Paciente 042</strong></div>
+              <div class="lab-top-actions"><span class="lab-demo-badge">Dados demonstrativos</span><span class="lab-source-link">↗ Ver fonte original</span></div>
+            </header>
+            <section class="lab-summary" aria-label="Resumo do exame">
+              <div><span>Exame processado</span><strong>12 jun 2026 · 08:42</strong></div>
+              <div><span>Indicadores avaliados</span><strong>08</strong></div>
+              <div><span>Pontos de atenção</span><strong class="lab-alert-number">02</strong></div>
+              <div><span>Status da análise</span><strong class="lab-status"><i></i> Revisão necessária</strong></div>
+            </section>
+            <div class="lab-grid">
+              <section class="lab-panel lab-biomarkers" aria-label="Indicadores priorizados">
+                <header><div><span>Biomarcadores priorizados</span><strong>Leitura por relevância</strong></div><small>8 indicadores</small></header>
+                <div class="lab-marker-list">
+                  <article class="is-alert"><div class="lab-marker-name"><i>A</i><span><b>Indicador A</b><small>Ponto de atenção</small></span></div><strong>14,8 <small>u.d.</small></strong><span class="lab-pill">Acima</span></article>
+                  <article><div class="lab-marker-name"><i>B</i><span><b>Indicador B</b><small>Dentro da referência</small></span></div><strong>7,2 <small>u.d.</small></strong><span class="lab-pill is-ok">Adequado</span></article>
+                  <article><div class="lab-marker-name"><i>C</i><span><b>Indicador C</b><small>Dentro da referência</small></span></div><strong>4,6 <small>u.d.</small></strong><span class="lab-pill is-ok">Adequado</span></article>
+                  <article><div class="lab-marker-name"><i>D</i><span><b>Indicador D</b><small>Ponto de atenção</small></span></div><strong>2,1 <small>u.d.</small></strong><span class="lab-pill">Abaixo</span></article>
+                </div>
+              </section>
+              <section class="lab-panel lab-attention" aria-label="Ponto de atenção e explicação assistida">
+                <header><span>Ponto de atenção</span><small>Indicador A</small></header>
+                <div class="lab-reading"><div><strong>14,8</strong><small>u.d.</small></div><span>↑ 18% vs. último exame</span></div>
+                <div class="lab-range"><div><i></i></div><span><small>0</small><b>Faixa de referência: 5,0–12,5 u.d.</b><small>20</small></span></div>
+                <div class="lab-assistance"><span>✦ Explicação assistida</span><p>O resultado demonstrativo está acima da faixa de referência. Considere o histórico e o contexto clínico antes de qualquer conclusão.</p><small>Conteúdo de apoio — não substitui avaliação profissional.</small></div>
+              </section>
+              <section class="lab-panel lab-history" aria-label="Histórico e evolução do indicador A">
+                <header><div><span>Histórico e evolução</span><strong>Indicador A · últimos 4 exames</strong></div><small>12 meses</small></header>
+                <div class="lab-chart" aria-hidden="true">
+                  <div class="lab-reference-zone"><span>faixa de referência</span></div>
+                  <div class="lab-trend-line"></div>
+                  <i class="point-1"></i><i class="point-2"></i><i class="point-3"></i><i class="point-4"></i>
+                </div>
+                <div class="lab-chart-labels"><span>Jun/25 <b>8,4</b></span><span>Out/25 <b>10,1</b></span><span>Fev/26 <b>12,5</b></span><span>Jun/26 <b>14,8</b></span></div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <figcaption>Interface conceitual recriada exclusivamente para demonstrar o raciocínio do projeto.</figcaption>
+      </figure>
 
       <section class="case-section"><h2>Resumo</h2><p>Transformei uma necessidade clínica complexa em uma proposta de produto clara: reduzir o esforço necessário para interpretar exames, sem substituir a avaliação médica. O trabalho conectou visão de produto, experiência do usuário e preparação do escopo para o desenvolvimento.</p></section>
 
@@ -40,7 +87,7 @@
       <section class="case-section"><h2>Resultado esperado</h2><p>Reduzir o tempo de interpretação dos exames, facilitar a identificação de alterações relevantes e oferecer ao médico uma visão mais clara da evolução dos biomarcadores — mantendo o exame original acessível para conferência e rastreabilidade.</p></section>
 
       <section class="decision-section">
-        <div class="decision-heading"><p class="eyebrow">Do problema à interface</p><h2>Principais decisões de produto</h2><p>As telas são consequência das decisões. Cada escolha de interface responde a uma necessidade clínica ou operacional identificada durante a estruturação do produto.</p></div>
+        <div class="decision-heading"><p class="eyebrow">Do problema à interface</p><h2>Principais decisões de produto</h2><p>A representação visual materializa as decisões de produto. Cada elemento responde a uma necessidade clínica ou operacional identificada durante a estruturação da solução.</p></div>
 
         <div class="decision-story-layout" data-case-story>
           <figure class="decision-product-stage">
@@ -71,9 +118,9 @@
 
       <section class="skills-section"><h2>Competências demonstradas</h2><ul><li>Product Discovery</li><li>Definição de MVP</li><li>Priorização de produto</li><li>Gestão de backlog</li><li>Requisitos funcionais</li><li>Regras de negócio</li><li>Critérios de aceite</li><li>User Flows</li><li>Arquitetura da informação</li><li>UX/UI Design</li><li>Prototipação</li><li>Colaboração com a equipe de desenvolvimento</li></ul></section>
 
-      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, documentos internos e especificações proprietárias não são apresentados. O conteúdo resume minha atuação e as principais decisões de produto sem expor informações sensíveis da empresa.</p></aside>
+      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, telas reais, documentos internos e especificações proprietárias não são exibidos. A interface apresentada neste case foi recriada com identidade própria e dados 100% fictícios, exclusivamente para comunicar o raciocínio e as decisões de produto sem expor informações sensíveis da empresa.</p></aside>
     </article>
   </main>
   <footer id="contato"><div class="footer-top"><div><h2>Lucas Maciel</h2><p>Product Owner &amp; UX/UI Designer</p></div><div class="footer-contact"><a href="mailto:souzamaciel.lucas@gmail.com">souzamaciel.lucas@gmail.com</a><a href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div><p class="copyright">© 2026 Lucas Maciel — Product Owner &amp; UX/UI Designer</p></footer>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=10"></script>
 </body></html>

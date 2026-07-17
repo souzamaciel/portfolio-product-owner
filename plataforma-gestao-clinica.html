@@ -4,7 +4,7 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Case Plataforma de Gestão Clínica — evolução contínua de um SaaS para gestão de clínicas.">
   <title>Plataforma de Gestão Clínica — Lucas Maciel</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=8"><link rel="stylesheet" href="case.css?v=7">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=18"><link rel="stylesheet" href="case.css?v=11">
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html">Lucas Maciel</a><nav class="main-nav"><a href="index.html#inicio">Início</a><a href="about.html">Sobre</a><a href="index.html#projetos">Projetos</a><a href="index.html#stack">Stack</a><a href="#contato">Contato</a></nav><div class="header-actions"><a class="icon-link" href="mailto:souzamaciel.lucas@gmail.com" aria-label="Enviar e-mail"><svg viewBox="0 0 24 24"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6"/></svg></a><a class="icon-link" href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6 9v9M6 6.5v.01M10 18v-5c0-2 1-3.5 3.5-3.5S18 11 18 13v5M10 10v8"/></svg></a></div><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button></header>
@@ -28,7 +28,20 @@
         </dl>
       </section>
 
-      <figure class="case-hero clinic-hero"><img src="assets/plataforma-clinica.png" alt="Interface demonstrativa e anonimizada da plataforma de gestão de clínicas"><figcaption>Produto central da operação de mais de 2.500 usuários.</figcaption></figure>
+      <figure class="case-hero concept-product-hero clinic-concept-hero">
+        <div class="product-concept" role="img" aria-label="Interface conceitual de gestão clínica com agenda, indicadores operacionais, pacientes e tarefas">
+          <aside class="product-rail" aria-hidden="true"><div class="product-mark"></div><nav><i class="is-current"></i><i></i><i></i><i></i></nav><span>LM</span></aside>
+          <div class="product-space">
+            <header class="product-top"><div><small>Visão operacional</small><strong>Unidade Aurora · Quinta-feira, 16 jul</strong></div><div><span class="concept-badge">Dados fictícios</span><b class="unit-status"><i></i> Unidade ativa</b></div></header>
+            <section class="operation-metrics"><article><small>Atendimentos hoje</small><strong>28</strong><span>4 em andamento</span></article><article><small>Ocupação da agenda</small><strong>82%</strong><span>6 horários livres</span></article><article><small>Pendências da equipe</small><strong>05</strong><span>2 prioritárias</span></article><article><small>Receita demonstrativa</small><strong>R$ 8,4 mil</strong><span>estimativa do dia</span></article></section>
+            <div class="clinic-layout">
+              <section class="concept-panel agenda-panel"><header><div><small>Agenda da unidade</small><strong>Próximos atendimentos</strong></div><span>Hoje</span></header><div class="agenda-list"><article><time>10:30</time><div><b>Paciente 204</b><small>Consulta · Sala 02</small></div><span class="status-pill is-progress">Em atendimento</span></article><article><time>11:10</time><div><b>Paciente 318</b><small>Retorno · Sala 01</small></div><span class="status-pill">Confirmado</span></article><article><time>11:40</time><div><b>Paciente 076</b><small>Avaliação · Sala 03</small></div><span class="status-pill">Confirmado</span></article><article><time>12:20</time><div><b>Paciente 451</b><small>Procedimento · Sala 02</small></div><span class="status-pill is-waiting">A confirmar</span></article></div></section>
+              <section class="concept-panel task-panel"><header><div><small>Fluxo da equipe</small><strong>Pendências prioritárias</strong></div><span>5 itens</span></header><div class="task-list"><p><i></i><span><b>Revisar cadastro incompleto</b><small>Paciente 091 · Recepção</small></span></p><p><i></i><span><b>Confirmar disponibilidade</b><small>Sala 03 · Operação</small></span></p><p><i></i><span><b>Validar fechamento do dia</b><small>Financeiro · Até 18h</small></span></p></div><div class="capacity"><span>Capacidade por período</span><div><i style="width:82%"></i></div><small>82% da agenda utilizada</small></div></section>
+            </div>
+          </div>
+        </div>
+        <figcaption>Interface conceitual recriada exclusivamente para demonstrar o raciocínio do projeto.</figcaption>
+      </figure>
 
       <section class="case-section"><h2>O produto</h2><div><p>A Plataforma de Gestão Clínica era o principal produto da empresa, desenvolvido para apoiar a gestão clínica, administrativa e operacional de clínicas e profissionais de saúde.</p><p>A plataforma reunia diferentes módulos e fluxos do dia a dia das clínicas. Meu primeiro trabalho no produto foi o redesign da plataforma; posteriormente, passei a atuar principalmente em sua evolução contínua.</p></div></section>
 
@@ -98,10 +111,10 @@
 
       <section class="skills-section"><h2>Competências demonstradas</h2><ul><li>Product Discovery</li><li>Customer Discovery</li><li>Gestão de stakeholders</li><li>Priorização de backlog</li><li>Levantamento de requisitos</li><li>Regras de negócio</li><li>PBIs e User Stories</li><li>Critérios de aceite</li><li>User Flows</li><li>UX/UI Design</li><li>Prototipação</li><li>Refinamento com a equipe de desenvolvimento</li><li>Evolução contínua de produto</li></ul></section>
 
-      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, documentos internos, protótipos completos e especificações proprietárias não são apresentados. O case resume minha atuação e o processo utilizado na evolução do produto sem expor informações estratégicas da empresa.</p></aside>
+      <aside><b>Confidencialidade</b><p>Por questões de confidencialidade, telas reais, documentos internos e especificações proprietárias não são exibidos. A interface apresentada foi recriada com identidade própria e dados 100% fictícios, exclusivamente para demonstrar decisões de produto sem expor informações estratégicas da empresa.</p></aside>
     </article>
   </main>
 
   <footer id="contato"><div class="footer-top"><div><h2>Lucas Maciel</h2><p>Product Owner &amp; UX/UI Designer</p></div><div class="footer-contact"><a href="mailto:souzamaciel.lucas@gmail.com">souzamaciel.lucas@gmail.com</a><a href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div><p class="copyright">© 2026 Lucas Maciel — Product Owner &amp; UX/UI Designer</p></footer>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=10"></script>
 </body></html>

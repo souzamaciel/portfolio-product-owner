@@ -22,16 +22,29 @@
 @media(max-width:1000px){.project-related{grid-template-columns:1fr}.project-related .project-media{min-height:0;height:430px}.project-related .project-card-copy{padding:38px}}
 @media(max-width:700px){.project-related{display:flex;flex-direction:column;min-height:auto}.project-related .project-media{height:auto;aspect-ratio:1.25}.project-related .project-card-copy{padding:26px}}
 
-/* Editorial cursor enhancement */
-.cursor-dot,.cursor-ring{position:fixed;z-index:100;left:0;top:0;pointer-events:none;opacity:0;will-change:transform}.cursor-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(22,128,90,.08);transition:opacity .2s}.cursor-ring{width:36px;height:36px;border:1px solid rgba(22,128,90,.62);border-radius:999px;background:rgba(255,255,255,.06);display:grid;place-items:center;overflow:hidden;backdrop-filter:blur(2px);transition:width .28s cubic-bezier(.2,.8,.2,1),height .28s cubic-bezier(.2,.8,.2,1),background .25s,border-color .25s,opacity .2s}.cursor-ring span{font:600 10px/1 Poppins,sans-serif;letter-spacing:.02em;white-space:nowrap;color:#fff;opacity:0;transform:translateY(3px);transition:opacity .16s,transform .22s}.cursor-active .cursor-dot,.cursor-active .cursor-ring{opacity:1}.cursor-ring.is-interactive{width:52px;height:52px;border-color:rgba(22,128,90,.78);background:rgba(22,128,90,.08)}.cursor-ring.has-label{width:102px;height:44px;border-color:var(--accent);background:rgba(22,128,90,.94);backdrop-filter:blur(8px)}.cursor-ring.has-label span{opacity:1;transform:none}.cursor-magnetic{transition:transform .28s cubic-bezier(.2,.8,.2,1)}
-@media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
-@media(prefers-reduced-motion:reduce){.cursor-dot,.cursor-ring{display:none!important}.cursor-magnetic{transform:none!important}}
-
 /* Product image framing */
 .project-media img{object-fit:cover;object-position:left top}
-.media-analysis{background:#f4f6f6}
-.media-copilot{background:#f8f8fb}
-.media-platform{background:#f3f4f4}
-.media-protocol{background:#eef0f3}
+.media-analysis{background:#f6f6f3}
+.media-copilot{background:#fff}
+.media-platform{background:#ffff}
+.media-protocol{background:#f7f7fa}
 .media-protocol img{object-position:50% 48%}
-@media(max-width:700px){.media-protocol img{object-position:50% 42%}}
+@media(max-width:800px){.media-protocol img{object-position:50% 42%}}
+.case-image-frame{position:relative;display:grid;place-items:center;overflow:visible}
+.project-media img.case-concept-image,.project-card:hover .project-media img.case-concept-image{width:100%;height:auto;max-width:none;object-fit:contain;object-position:center;transform:none!important;will-change:auto}
+.project-media.media-analysis .case-image-frame{width:99%;height:86%}
+.project-media.media-analysis .case-concept-image{width:100%;max-height:100%}
+.project-secondary .project-media{height:438px}
+.project-media.media-copilot .case-image-frame,.project-media.media-platform .case-image-frame{width:97%;height:auto;align-self:center}
+.project-media.media-copilot .case-concept-image,.project-media.media-platform .case-concept-image{width:100%;height:auto;max-width:100%;object-fit:contain}
+.project-related{height:628px;min-height:0;grid-template-rows:minmax(0,1fr)}
+.project-related .project-media.media-protocol{height:100%;min-height:0}
+.project-media.media-protocol .case-image-frame{width:99%;height:84%}
+.project-media.media-protocol .case-concept-image{width:100%;height:100%;max-width:100%;object-fit:contain}
+.project-card.visible{transform:none;box-shadow:none}.project-featured.visible{box-shadow:0 24px 52px rgba(0,0,0,.08)}.project-secondary.visible{box-shadow:0 13px 31px rgba(0,0,0,.04)}.project-related.visible{box-shadow:0 8px 22px rgba(0,0,0,.025)}.project-card.visible:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.09)}
+.project-card .project-media:after{display:none}
+.project-card:focus-visible,.icon-link:focus-visible,.main-nav a:focus-visible,.text-link:focus-visible,.tool:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.menu-open{overflow:hidden}
+@media(max-width:1000px){.project-featured .project-media{aspect-ratio:814.69/672}.project-secondary .project-media{height:auto;aspect-ratio:619.07/438}.project-related .project-media.media-protocol{height:auto;min-height:0;aspect-ratio:773/627}}
+@media(max-width:1000px){.project-related{height:auto;min-height:auto}}
+@media(max-width:700px){.project-featured .project-media,.project-secondary .project-media,.project-related .project-media.media-protocol{height:auto;min-height:0}.project-card.visible,.project-card.visible:hover{transform:none}}
