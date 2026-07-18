@@ -15,3 +15,14 @@
 .build-step{min-height:clamp(380px,52vh,560px)}
 @media(max-width:900px){.build-step{min-height:clamp(340px,48vh,460px);padding-top:24px;padding-bottom:24px}}
 @media(max-width:700px){.build-step{min-height:clamp(300px,42vh,370px)}}
+
+/* Dark theme — the build-stage canvas intentionally stays light (it depicts a product screen) */
+[data-theme="dark"] .hero-lead{color:#b0b0ab}
+[data-theme="dark"] .about-portrait{background:linear-gradient(180deg,transparent 46%,#3e413e)}
+[data-theme="dark"] .section-content>p,[data-theme="dark"] .belief-section>div>p{color:#b7b7b1}
+[data-theme="dark"] .difference-heading>p:last-child{color:#a8a8a3}
+[data-theme="dark"] .primary-action{color:var(--paper)}
+[data-theme="dark"] .build-story-heading>p:last-child{color:#a5a5a0}
+[data-theme="dark"] .build-step p{color:#a5a5a0}
+[data-theme="dark"] .build-stage{border-color:#3a3c3a}
+@media(max-width:900px){[data-theme="dark"] .build-step{background:var(--paper)}}

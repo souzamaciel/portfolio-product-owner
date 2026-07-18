@@ -236,3 +236,25 @@ function requestScrollUpdate() {
 addEventListener('scroll', requestScrollUpdate, { passive: true });
 addEventListener('resize', requestScrollUpdate, { passive: true });
 updateScrollEffects();
+
+const themeToggle = document.querySelector('.theme-toggle');
+
+if (themeToggle) {
+  const applyTheme = theme => {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro');
+  };
+
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if (!localStorage.getItem('theme')) applyTheme(event.matches ? 'dark' : 'light');
+  });
+}
