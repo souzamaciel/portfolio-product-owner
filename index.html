@@ -3,129 +3,349 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Lucas Maciel, Product Owner com experiência em UX/UI Design.">
+  <meta name="description" content="Lucas Maciel — Product Owner com experiência em UX/UI Design. Registros de decisões de produto em Healthcare, SaaS e IA.">
+  <meta property="og:title" content="Lucas Maciel — Product Owner &amp; UX/UI Designer">
+  <meta property="og:description" content="Grandes produtos nascem da compreensão profunda dos problemas — não das soluções.">
+  <meta property="og:type" content="website">
   <title>Lucas Maciel — Product Owner &amp; UX/UI Designer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C7A54'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%23F4F1EA' text-anchor='middle'%3ELM%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Sora:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <script>(function(){var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))})()</script>
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="anexos.css?v=2">
+  <link rel="stylesheet" href="scrollytelling.css?v=2">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Voltar ao início">Lucas Maciel</a>
-    <nav class="main-nav" aria-label="Navegação principal">
-      <a href="#inicio">Início</a><a href="about.html">Sobre</a><a href="#projetos">Projetos</a><a href="#stack">Stack</a><a href="#contato">Contato</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio">Lucas Maciel</a>
+    <nav class="topnav" aria-label="Navegação principal">
+      <a href="#registros">Registros</a>
+      <a href="#processo">Processo</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="#contato">Contato</a>
     </nav>
-    <div class="header-actions">
-      <button class="icon-link theme-toggle" aria-label="Ativar tema escuro" aria-pressed="false"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 13.6A8.2 8.2 0 0 1 10.4 3.8a8.2 8.2 0 1 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
-      <a class="icon-link" href="mailto:souzamaciel.lucas@gmail.com" aria-label="Enviar e-mail">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6"/></svg>
-      </a>
-      <a class="icon-link" href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v9M6 6.5v.01M10 18v-5c0-2 1-3.5 3.5-3.5S18 11 18 13v5M10 10v8"/></svg>
-      </a>
-    </div>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    <button class="theme-toggle" aria-label="Ativar tema escuro" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 13.6A8.2 8.2 0 0 1 10.4 3.8a8.2 8.2 0 1 0 9.8 9.8z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+    </button>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <h1 data-reveal>Acredito que grandes produtos nascem da compreensão profunda dos problemas, não das soluções.</h1>
-      <a class="scroll-cue" href="#sobre" aria-label="Ir para a seção sobre"><span>Explore</span><i>↓</i></a>
+      <span class="status-badge" data-reveal><span class="dot" aria-hidden="true"></span>Aberto a conversas</span>
+
+      <p class="hero-kicker">Acredito que</p>
+      <h1 class="hero-title" aria-label="Acredito que grandes produtos nascem da compreensão profunda dos problemas — não das soluções.">
+        <span class="hero-line">grandes produtos</span>
+        <span class="hero-line">nascem da</span>
+        <span class="hero-line"><em>compreensão profunda</em></span>
+        <span class="hero-line">dos problemas<span class="accent">.</span></span>
+        <span class="hero-line hero-line-small">Não das soluções.</span>
+      </h1>
+
+      <a class="scroll-cue" href="#registros">Explorar registros <span aria-hidden="true">↓</span></a>
     </section>
 
-    <section class="about section" id="sobre">
-      <div class="about-inner">
-        <div class="portrait-wrap" data-reveal><img src="assets/portrait.png" alt="Lucas Maciel" loading="lazy"></div>
-        <div class="about-copy" data-reveal>
-          <div class="hello"><strong>Olá!</strong><div><h2>Eu sou o Lucas Maciel</h2><p>Product Owner com experiência em UX/UI Design.</p></div></div>
-          <p>Apaixonado por entender <b>problemas</b>, estruturar <b>soluções</b> e transformar <b>complexidade</b> em <b>produto</b>.<br>Como Product Owner com experiência em UX/UI Design, conecto negócio, usuário e tecnologia para transformar problemas complexos em produtos digitais claros, úteis e viáveis para o desenvolvimento.</p>
-          <a class="text-link" href="about.html">Saiba mais sobre minha abordagem <span>→</span></a>
+    <section class="section" id="registros">
+      <header class="section-head" data-reveal>
+        <span class="section-index">§02</span>
+        <h2>Registros de produto</h2>
+        <p class="section-note">4 dossiês · Healthcare, SaaS B2B e IA</p>
+      </header>
+      <p class="section-lead" data-reveal>Produtos apresentados a partir das decisões e dos problemas que orientaram minha atuação — não apenas das telas.</p>
+
+      <div class="registro-list">
+        <article class="registro" data-reveal>
+          <a class="registro-row" href="analise-laboratorial-inteligente.html">
+            <span class="registro-num" aria-hidden="true">01</span>
+            <span class="registro-info">
+              <span class="registro-meta">Healthcare · IA · Product Discovery</span>
+              <h3>Análise Laboratorial Inteligente</h3>
+              <span class="registro-decision">IA para acelerar a interpretação de exames e acompanhar a evolução clínica do paciente.</span>
+            </span>
+            <span class="registro-arrow" aria-hidden="true">→</span>
+          </a>
+          <div class="registro-preview">
+            <div class="preview-inner">
+              <figure class="anexo">
+                <div class="anexo-canvas" inert><div class="anexo-scale">
+<div class="lab-concept" role="img" aria-label="Interface conceitual de análise laboratorial com resumo do exame, indicadores priorizados, explicação assistida, faixa de referência, histórico e acesso à fonte original">
+          <aside class="lab-sidebar" aria-hidden="true">
+            <div class="lab-mark"><span></span><b>nexo</b></div>
+            <nav><i class="is-current"></i><i></i><i></i><i></i></nav>
+            <div class="lab-avatar">LM</div>
+          </aside>
+          <div class="lab-workspace">
+            <header class="lab-topbar">
+              <div><span>Análise de exame</span><strong>Paciente 042</strong></div>
+              <div class="lab-top-actions"><span class="lab-demo-badge">Dados demonstrativos</span><span class="lab-source-link">↗ Ver fonte original</span></div>
+            </header>
+            <section class="lab-summary" aria-label="Resumo do exame">
+              <div><span>Exame processado</span><strong>12 jun 2026 · 08:42</strong></div>
+              <div><span>Indicadores avaliados</span><strong>08</strong></div>
+              <div><span>Pontos de atenção</span><strong class="lab-alert-number">02</strong></div>
+              <div><span>Status da análise</span><strong class="lab-status"><i></i> Revisão necessária</strong></div>
+            </section>
+            <div class="lab-grid">
+              <section class="lab-panel lab-biomarkers" aria-label="Indicadores priorizados">
+                <header><div><span>Biomarcadores priorizados</span><strong>Leitura por relevância</strong></div><small>8 indicadores</small></header>
+                <div class="lab-marker-list">
+                  <article class="is-alert"><div class="lab-marker-name"><i>A</i><span><b>Indicador A</b><small>Ponto de atenção</small></span></div><strong>14,8 <small>u.d.</small></strong><span class="lab-pill">Acima</span></article>
+                  <article><div class="lab-marker-name"><i>B</i><span><b>Indicador B</b><small>Dentro da referência</small></span></div><strong>7,2 <small>u.d.</small></strong><span class="lab-pill is-ok">Adequado</span></article>
+                  <article><div class="lab-marker-name"><i>C</i><span><b>Indicador C</b><small>Dentro da referência</small></span></div><strong>4,6 <small>u.d.</small></strong><span class="lab-pill is-ok">Adequado</span></article>
+                  <article><div class="lab-marker-name"><i>D</i><span><b>Indicador D</b><small>Ponto de atenção</small></span></div><strong>2,1 <small>u.d.</small></strong><span class="lab-pill">Abaixo</span></article>
+                </div>
+              </section>
+              <section class="lab-panel lab-attention" aria-label="Ponto de atenção e explicação assistida">
+                <header><span>Ponto de atenção</span><small>Indicador A</small></header>
+                <div class="lab-reading"><div><strong>14,8</strong><small>u.d.</small></div><span>↑ 18% vs. último exame</span></div>
+                <div class="lab-range"><div><i></i></div><span><small>0</small><b>Faixa de referência: 5,0–12,5 u.d.</b><small>20</small></span></div>
+                <div class="lab-assistance"><span>✦ Explicação assistida</span><p>O resultado demonstrativo está acima da faixa de referência. Considere o histórico e o contexto clínico antes de qualquer conclusão.</p><small>Conteúdo de apoio — não substitui avaliação profissional.</small></div>
+              </section>
+              <section class="lab-panel lab-history" aria-label="Histórico e evolução do indicador A">
+                <header><div><span>Histórico e evolução</span><strong>Indicador A · últimos 4 exames</strong></div><small>12 meses</small></header>
+                <div class="lab-chart" aria-hidden="true">
+                  <div class="lab-reference-zone"><span>faixa de referência</span></div>
+                  <div class="lab-trend-line"></div>
+                  <i class="point-1"></i><i class="point-2"></i><i class="point-3"></i><i class="point-4"></i>
+                </div>
+                <div class="lab-chart-labels"><span>Jun/25 <b>8,4</b></span><span>Out/25 <b>10,1</b></span><span>Fev/26 <b>12,5</b></span><span>Jun/26 <b>14,8</b></span></div>
+              </section>
+            </div>
+          </div>
+        </div>
+</div></div>
+                <figcaption>Anexo 01·A — Interface conceitual · dados fictícios</figcaption>
+              </figure>
+              <div class="preview-copy">
+                <p class="preview-label">Minha contribuição</p>
+                <p>Estruturei a jornada, os fluxos e os requisitos do MVP para tornar a análise de biomarcadores mais rápida e organizada.</p>
+                <ul class="tagline" aria-label="Competências"><li>Discovery</li><li>UX/UI</li><li>Requisitos</li><li>Backlog</li></ul>
+                <a class="preview-cta" href="analise-laboratorial-inteligente.html">Abrir dossiê completo →</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="registro" data-reveal>
+          <a class="registro-row" href="copiloto-prontuario.html">
+            <span class="registro-num" aria-hidden="true">02</span>
+            <span class="registro-info">
+              <span class="registro-meta">Healthcare · IA · Prontuário</span>
+              <h3>Copiloto de Prontuário</h3>
+              <span class="registro-decision">Assistente que transforma a conversa clínica em registros estruturados, documentos e protocolos.</span>
+            </span>
+            <span class="registro-arrow" aria-hidden="true">→</span>
+          </a>
+          <div class="registro-preview">
+            <div class="preview-inner">
+              <figure class="anexo">
+                <div class="anexo-canvas" inert><div class="anexo-scale">
+<div class="product-concept" role="img" aria-label="Interface conceitual de copiloto clínico com transcrição, resumo estruturado, fontes e revisão médica">
+          <aside class="product-rail" aria-hidden="true"><div class="product-mark"></div><nav><i class="is-current"></i><i></i><i></i><i></i></nav><span>LM</span></aside>
+          <div class="product-space">
+            <header class="product-top"><div><small>Consulta em andamento</small><strong>Paciente 117 · Atendimento demonstrativo</strong></div><div><span class="concept-badge">Dados fictícios</span><b class="live-badge"><i></i> 18:24</b></div></header>
+            <div class="copilot-layout">
+              <section class="concept-panel transcript-panel"><header><div><small>Transcrição da consulta</small><strong>Conversa organizada em tempo real</strong></div><span>Fonte principal</span></header><div class="transcript-lines"><p><b>Profissional · 10:14</b> Como você se sentiu desde o último atendimento?</p><p><b>Paciente 117 · 10:15</b> Relato demonstrativo sobre evolução e rotina.</p><p><b>Profissional · 10:16</b> Vamos revisar os pontos e registrar a conduta.</p></div><div class="audio-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span>Escuta ativa</span></div></section>
+              <section class="concept-panel summary-panel"><header><div><small>Resumo estruturado</small><strong>Pronto para revisão</strong></div><span class="status-pill">Gerado pela IA</span></header><div class="summary-field"><small>Queixa e evolução</small><p>Conteúdo demonstrativo organizado a partir da conversa, com os principais pontos destacados.</p></div><div class="summary-field"><small>Conduta sugerida para registro</small><p>Revisar informações, complementar o contexto e confirmar antes de salvar.</p></div></section>
+              <section class="concept-panel source-panel"><header><div><small>Fontes consideradas</small><strong>Contexto rastreável</strong></div><span>3 fontes</span></header><div class="source-chips"><span>✓ Consulta atual</span><span>✓ Prontuário fictício</span><span>✓ Questionário 03</span></div><div class="review-actions"><button type="button">Editar conteúdo</button><button type="button">Revisar e registrar</button></div></section>
+            </div>
+          </div>
+        </div>
+</div></div>
+                <figcaption>Anexo 02·A — Interface conceitual · dados fictícios</figcaption>
+              </figure>
+              <div class="preview-copy">
+                <p class="preview-label">Minha contribuição</p>
+                <p>Conectei necessidades clínicas, experiência do usuário e regras do produto em uma solução preparada para o desenvolvimento.</p>
+                <ul class="tagline" aria-label="Competências"><li>AI Product</li><li>UX/UI</li><li>Regras de negócio</li></ul>
+                <a class="preview-cta" href="copiloto-prontuario.html">Abrir dossiê completo →</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="registro" data-reveal>
+          <a class="registro-row" href="plataforma-gestao-clinica.html">
+            <span class="registro-num" aria-hidden="true">03</span>
+            <span class="registro-info">
+              <span class="registro-meta">SaaS B2B · Healthcare</span>
+              <h3>Plataforma de Gestão Clínica</h3>
+              <span class="registro-decision">Evolução contínua de uma plataforma de gestão utilizada por diferentes perfis de usuários.</span>
+            </span>
+            <span class="registro-arrow" aria-hidden="true">→</span>
+          </a>
+          <div class="registro-preview">
+            <div class="preview-inner">
+              <figure class="anexo">
+                <div class="anexo-canvas" inert><div class="anexo-scale">
+<div class="product-concept" role="img" aria-label="Interface conceitual de gestão clínica com agenda, indicadores operacionais, pacientes e tarefas">
+          <aside class="product-rail" aria-hidden="true"><div class="product-mark"></div><nav><i class="is-current"></i><i></i><i></i><i></i></nav><span>LM</span></aside>
+          <div class="product-space">
+            <header class="product-top"><div><small>Visão operacional</small><strong>Unidade Aurora · Quinta-feira, 16 jul</strong></div><div><span class="concept-badge">Dados fictícios</span><b class="unit-status"><i></i> Unidade ativa</b></div></header>
+            <section class="operation-metrics"><article><small>Atendimentos hoje</small><strong>28</strong><span>4 em andamento</span></article><article><small>Ocupação da agenda</small><strong>82%</strong><span>6 horários livres</span></article><article><small>Pendências da equipe</small><strong>05</strong><span>2 prioritárias</span></article><article><small>Receita demonstrativa</small><strong>R$ 8,4 mil</strong><span>estimativa do dia</span></article></section>
+            <div class="clinic-layout">
+              <section class="concept-panel agenda-panel"><header><div><small>Agenda da unidade</small><strong>Próximos atendimentos</strong></div><span>Hoje</span></header><div class="agenda-list"><article><time>10:30</time><div><b>Paciente 204</b><small>Consulta · Sala 02</small></div><span class="status-pill is-progress">Em atendimento</span></article><article><time>11:10</time><div><b>Paciente 318</b><small>Retorno · Sala 01</small></div><span class="status-pill">Confirmado</span></article><article><time>11:40</time><div><b>Paciente 076</b><small>Avaliação · Sala 03</small></div><span class="status-pill">Confirmado</span></article><article><time>12:20</time><div><b>Paciente 451</b><small>Procedimento · Sala 02</small></div><span class="status-pill is-waiting">A confirmar</span></article></div></section>
+              <section class="concept-panel task-panel"><header><div><small>Fluxo da equipe</small><strong>Pendências prioritárias</strong></div><span>5 itens</span></header><div class="task-list"><p><i></i><span><b>Revisar cadastro incompleto</b><small>Paciente 091 · Recepção</small></span></p><p><i></i><span><b>Confirmar disponibilidade</b><small>Sala 03 · Operação</small></span></p><p><i></i><span><b>Validar fechamento do dia</b><small>Financeiro · Até 18h</small></span></p></div><div class="capacity"><span>Capacidade por período</span><div><i style="width:82%"></i></div><small>82% da agenda utilizada</small></div></section>
+            </div>
+          </div>
+        </div>
+</div></div>
+                <figcaption>Anexo 03·A — Interface conceitual · dados fictícios</figcaption>
+              </figure>
+              <div class="preview-copy">
+                <p class="preview-label">Minha contribuição</p>
+                <p>Transformei feedback de clientes e necessidades de negócio em prioridades, fluxos e entregas incrementais.</p>
+                <ul class="tagline" aria-label="Competências"><li>Priorização</li><li>Backlog</li><li>Entrega incremental</li></ul>
+                <a class="preview-cta" href="plataforma-gestao-clinica.html">Abrir dossiê completo →</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="registro" data-reveal>
+          <a class="registro-row" href="assistente-protocolos-clinicos.html">
+            <span class="registro-num" aria-hidden="true">04</span>
+            <span class="registro-info">
+              <span class="registro-meta">Healthcare · IA · Prescrição assistida</span>
+              <h3>Assistente de Protocolos Clínicos</h3>
+              <span class="registro-decision">Prontuário e análises laboratoriais combinados para gerar propostas editáveis de protocolos.</span>
+            </span>
+            <span class="registro-arrow" aria-hidden="true">→</span>
+          </a>
+          <div class="registro-preview">
+            <div class="preview-inner">
+              <figure class="anexo">
+                <div class="anexo-canvas" inert><div class="anexo-scale">
+<div class="product-concept" role="img" aria-label="Interface conceitual de assistente de protocolos com contexto, proposta editável, ajustes e aprovação médica">
+          <aside class="product-rail" aria-hidden="true"><div class="product-mark"></div><nav><i class="is-current"></i><i></i><i></i><i></i></nav><span>LM</span></aside>
+          <div class="product-space">
+            <header class="product-top"><div><small>Proposta de protocolo</small><strong>Paciente 083 · Versão 02</strong></div><div><span class="concept-badge">Dados fictícios</span><b class="draft-status">Rascunho para revisão</b></div></header>
+            <div class="protocol-layout">
+              <section class="concept-panel context-panel"><header><div><small>Contexto considerado</small><strong>Fontes vinculadas</strong></div><span>4 fontes</span></header><div class="context-list"><p><i>✓</i><span><b>Resumo do prontuário</b><small>Atualizado em 14 jul</small></span></p><p><i>✓</i><span><b>Análise laboratorial 024</b><small>12 indicadores estruturados</small></span></p><p><i>✓</i><span><b>Preferências registradas</b><small>2 observações demonstrativas</small></span></p><p><i>✓</i><span><b>Histórico de protocolos</b><small>1 versão anterior</small></span></p></div><button type="button" class="source-button">Ver fontes originais</button></section>
+              <section class="concept-panel protocol-editor"><header><div><small>Proposta gerada pela IA</small><strong>Estrutura editável</strong></div><span class="status-pill">Versão 02</span></header><div class="protocol-table"><div class="table-head"><span>Item</span><span>Quantidade</span><span>Frequência</span></div><div><b>Componente A</b><span>10 u.d.</span><span>1× por ciclo</span></div><div><b>Componente B</b><span>05 u.d.</span><span>2× por ciclo</span></div><div><b>Componente C</b><span>08 u.d.</span><span>1× por ciclo</span></div></div><div class="protocol-notes"><small>Observações para revisão</small><p>Conteúdo demonstrativo. Confirmar itens, quantidades e frequência antes da aprovação.</p></div><div class="review-actions"><button type="button">Solicitar ajuste</button><button type="button">Aprovar protocolo</button></div></section>
+              <section class="concept-panel adjustment-panel"><span>✦ Ajuste assistido</span><p>“Organize os itens por etapa e destaque o que mudou nesta versão.”</p><small>Nova versão gerada sem alterar a anterior.</small></section>
+            </div>
+          </div>
+        </div>
+</div></div>
+                <figcaption>Anexo 04·A — Interface conceitual · dados fictícios</figcaption>
+              </figure>
+              <div class="preview-copy">
+                <p class="preview-label">Minha contribuição</p>
+                <p>Estruturei o fluxo de contexto, geração, ajustes e aprovação — posteriormente integrado ao Copiloto de Prontuário.</p>
+                <ul class="tagline" aria-label="Competências"><li>AI Product</li><li>Integração</li><li>Human-in-the-loop</li></ul>
+                <a class="preview-cta" href="assistente-protocolos-clinicos.html">Abrir dossiê completo →</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="processo">
+      <header class="section-head" data-reveal>
+        <span class="section-index">§03</span>
+        <h2>Como eu decido</h2>
+        <p class="section-note">Método · 6 etapas</p>
+      </header>
+      <p class="section-lead" data-reveal>Role para acompanhar como cada etapa adiciona clareza e estrutura ao produto.</p>
+
+      <div class="build-story" data-build-story data-step="1">
+        <div class="build-layout">
+          <aside class="stage-frame build-stage" aria-hidden="true">
+            <div class="stage-top">
+              <span>Produto em construção</span>
+              <strong data-build-counter>01 / 06</strong>
+            </div>
+            <div class="product-canvas">
+              <div class="canvas-toolbar"><i></i><i></i><i></i><span>workspace / produto</span></div>
+
+              <div class="build-layer layer-problem is-built" data-build-layer="1">
+                <span class="layer-label">Problema</span>
+                <blockquote>Como transformar complexidade em uma experiência clara?</blockquote>
+                <div class="problem-signals"><span>Usuário</span><span>Negócio</span><span>Contexto</span></div>
+              </div>
+
+              <div class="build-layer layer-flow" data-build-layer="2">
+                <span class="flow-node">Contexto</span><i></i><span class="flow-node">Ação</span><i></i><span class="flow-node">Resultado</span>
+                <b></b><span class="flow-exception">Exceção</span>
+              </div>
+
+              <div class="build-layer layer-structure" data-build-layer="3">
+                <div class="wire-sidebar"><i></i><i></i><i></i></div>
+                <div class="wire-content"><span></span><strong></strong><div><i></i><i></i></div><button></button><small class="structure-note">Regras e estados definidos</small></div>
+              </div>
+
+              <div class="build-layer layer-priority" data-build-layer="4">
+                <span class="priority-tag">Agora</span>
+                <div class="priority-row"><i></i><b></b></div>
+                <div class="priority-row"><i></i><b></b></div>
+                <span class="later-tag">Depois</span>
+              </div>
+
+              <div class="build-layer layer-prototype" data-build-layer="5">
+                <div class="prototype-nav"><span></span><i></i><i></i></div>
+                <div class="prototype-main"><small>Visão geral</small><strong></strong><div><i></i><i></i></div><button>Continuar</button></div>
+              </div>
+
+              <div class="build-layer layer-handoff" data-build-layer="6">
+                <div><span>✓ Validado</span><span>✓ Priorizado</span><span>✓ Documentado</span></div>
+                <strong>Pronto para construir</strong>
+              </div>
+            </div>
+            <div class="stage-progress"><i></i></div>
+          </aside>
+
+          <ol class="stage-steps build-steps">
+            <li class="stage-step is-active" data-build-step="1"><span>01</span><div><h3>Descoberta e entendimento</h3><p>Começo pelo contexto, pelas pessoas e pelo problema que realmente precisa ser resolvido.</p></div></li>
+            <li class="stage-step" data-build-step="2"><span>02</span><div><h3>Jornadas e fluxos</h3><p>Transformo informações dispersas em caminhos, decisões, estados e exceções visíveis.</p></div></li>
+            <li class="stage-step" data-build-step="3"><span>03</span><div><h3>Requisitos e regras</h3><p>Estruturo o comportamento da solução para reduzir ambiguidades antes do desenvolvimento.</p></div></li>
+            <li class="stage-step" data-build-step="4"><span>04</span><div><h3>Priorização de backlog</h3><p>Organizo o que gera valor agora, o que depende de validação e o que pode evoluir depois.</p></div></li>
+            <li class="stage-step" data-build-step="5"><span>05</span><div><h3>Validação com protótipos</h3><p>Materializo a proposta para testar entendimento, utilidade e viabilidade antes de construir.</p></div></li>
+            <li class="stage-step" data-build-step="6"><span>06</span><div><h3>Alinhamento e desenvolvimento</h3><p>Conecto stakeholders e time técnico em torno de uma solução clara, priorizada e executável.</p></div></li>
+          </ol>
         </div>
       </div>
+
+      <p class="processo-more" data-reveal><a href="sobre.html">Sobre minha trajetória e abordagem →</a></p>
     </section>
 
-    <section class="projects section" id="projetos">
-      <div class="section-heading projects-heading" data-reveal>
-        <p class="section-kicker">Trabalhos selecionados</p>
-        <h2>Projetos em destaque<span>.</span></h2>
-        <p>Uma seleção de produtos em Healthcare, SaaS e inteligência artificial, apresentados a partir das decisões e dos problemas que orientaram minha atuação.</p>
-      </div>
-      <div class="project-grid">
-        <a class="project-card project-featured" href="analise-laboratorial-inteligente.html" data-reveal aria-label="Ver case Análise Laboratorial Inteligente">
-          <div class="project-card-copy">
-            <p class="project-meta">Healthcare · IA · Em produção</p>
-            <h3>Análise Laboratorial Inteligente</h3>
-            <p class="project-summary">IA para acelerar a interpretação de exames laboratoriais e acompanhar a evolução clínica do paciente.</p>
-            <div class="project-contribution"><span>Minha contribuição</span><p>Estruturei a jornada, os fluxos e os requisitos do MVP para tornar a análise de biomarcadores mais rápida e organizada.</p></div>
-            <ul class="project-tags" aria-label="Competências"><li>Product Discovery</li><li>UX/UI</li><li>Requisitos</li><li>Backlog</li></ul>
-            <span class="project-cta">Ver case <i>→</i></span>
-          </div>
-          <figure class="project-media media-analysis" aria-label="Preview conceitual da análise laboratorial">
-            <div class="case-image-frame"><img class="case-concept-image" src="assets/concept-analysis.png" alt="Interface conceitual de análise laboratorial"></div>
-          </figure>
-        </a>
-
-        <a class="project-card project-secondary" href="copiloto-prontuario.html" data-reveal aria-label="Ver case Copiloto de Prontuário">
-          <figure class="project-media media-copilot" aria-label="Preview conceitual do copiloto de prontuário">
-            <div class="case-image-frame"><img class="case-concept-image" src="assets/concept-copilot.png" alt="Interface conceitual do copiloto de prontuário"></div>
-          </figure>
-          <div class="project-card-copy">
-            <p class="project-meta">Healthcare · IA · Prontuário</p>
-            <h3>Copiloto de Prontuário</h3>
-            <p class="project-summary">Assistente que transforma a conversa clínica em registros estruturados, documentos e protocolos.</p>
-            <div class="project-contribution"><span>Minha contribuição</span><p>Conectei necessidades clínicas, experiência do usuário e regras do produto em uma solução preparada para o desenvolvimento.</p></div>
-            <span class="project-cta">Ver case <i>→</i></span>
-          </div>
-        </a>
-
-        <a class="project-card project-secondary" href="plataforma-gestao-clinica.html" data-reveal aria-label="Ver case Plataforma de Gestão Clínica">
-          <figure class="project-media media-platform" aria-label="Preview conceitual da plataforma de gestão clínica">
-            <div class="case-image-frame"><img class="case-concept-image" src="assets/concept-platform.png" alt="Interface conceitual da plataforma de gestão clínica"></div>
-          </figure>
-          <div class="project-card-copy">
-            <p class="project-meta">SaaS B2B · Healthcare</p>
-            <h3>Plataforma de Gestão Clínica</h3>
-            <p class="project-summary">Evolução contínua de uma plataforma para gestão de clínicas utilizada por diferentes perfis de usuários.</p>
-            <div class="project-contribution"><span>Minha contribuição</span><p>Transformei feedback de clientes e necessidades de negócio em prioridades, fluxos e entregas incrementais.</p></div>
-            <span class="project-cta">Ver case <i>→</i></span>
-          </div>
-        </a>
-
-        <a class="project-card project-related" href="assistente-protocolos-clinicos.html" data-reveal aria-label="Ver case Assistente de Protocolos Clínicos">
-          <figure class="project-media media-protocol" aria-label="Preview conceitual do assistente de protocolos">
-            <div class="case-image-frame"><img class="case-concept-image" src="assets/concept-protocol.png" alt="Interface conceitual do assistente de protocolos clínicos"></div>
-          </figure>
-          <div class="project-card-copy">
-            <p class="project-meta">Healthcare · IA · Prescrição assistida</p>
-            <h3>Assistente de Protocolos Clínicos</h3>
-            <p class="project-summary">Solução independente que combinava prontuário e análises laboratoriais para gerar propostas editáveis de protocolos.</p>
-            <div class="project-contribution"><span>Minha contribuição</span><p>Estruturei o fluxo de contexto, geração, ajustes e aprovação, que posteriormente foi integrado ao Copiloto de Prontuário.</p></div>
-            <ul class="project-tags" aria-label="Competências"><li>AI Product</li><li>UX/UI</li><li>Integração</li><li>Human-in-the-loop</li></ul>
-            <span class="project-cta">Ver case <i>→</i></span>
-          </div>
-        </a>
-      </div>
+    <section class="section section-stack" id="stack">
+      <header class="section-head" data-reveal>
+        <span class="section-index">§04</span>
+        <h2>Instrumentos de trabalho</h2>
+      </header>
+      <ul class="stack-grid" aria-label="Ferramentas">
+        <li class="tool-figma" data-reveal><span class="tool-icons"><img class="ico-default" src="assets/figma.svg" alt=""><img class="ico-color" src="assets/figma-color.svg" alt="" loading="lazy"></span><div><h3>Figma</h3><p>Interfaces e protótipos</p></div></li>
+        <li class="tool-notion" data-reveal><span class="tool-icons"><img class="ico-default" src="assets/notion.svg" alt=""><img class="ico-color" src="assets/notion-color.svg" alt="" loading="lazy"></span><div><h3>Notion</h3><p>Documentação de produto</p></div></li>
+        <li class="tool-azure" data-reveal><span class="tool-icons"><img class="ico-default" src="assets/azure.svg" alt=""><img class="ico-color" src="assets/azure-color.svg" alt="" loading="lazy"></span><div><h3>Azure DevOps</h3><p>Backlog e PBIs</p></div></li>
+        <li class="tool-chatgpt" data-reveal><span class="tool-icons"><img class="ico-default" src="assets/chatgpt.svg" alt=""><img class="ico-color" src="assets/chatgpt-color.svg" alt="" loading="lazy"></span><div><h3>ChatGPT</h3><p>Prompts e análise</p></div></li>
+        <li class="tool-claude" data-reveal><span class="tool-icons"><img class="ico-default" src="assets/claude.svg" alt=""><img class="ico-color" src="assets/claude-color.svg" alt="" loading="lazy"></span><div><h3>Claude Code</h3><p>Agentes e artefatos</p></div></li>
+        <li class="tool-obsidian" data-reveal><span class="tool-icons"><img class="ico-default" src="assets/obsidian.svg" alt=""><img class="ico-color" src="assets/obsidian-color.svg" alt="" loading="lazy"></span><div><h3>Obsidian</h3><p>Conhecimento e Markdown</p></div></li>
+      </ul>
     </section>
 
-    <section class="stack section" id="stack">
-      <div class="section-heading" data-reveal><h2>Minha Stack de Produto<span>.</span></h2><p>Ferramentas que conectam discovery, documentação, backlog, prototipação e IA aplicada.</p></div>
-      <div class="tools-grid">
-        <article class="tool tool-figma" data-reveal tabindex="0"><div class="tool-icons"><img class="tool-icon-default" src="assets/figma.svg" alt=""><img class="tool-icon-color" src="assets/figma-color.svg" alt=""></div><h3>Figma</h3><p>Interfaces e protótipos</p></article>
-        <article class="tool tool-notion" data-reveal tabindex="0"><div class="tool-icons"><img class="tool-icon-default" src="assets/notion.svg" alt=""><img class="tool-icon-color" src="assets/notion-color.svg" alt=""></div><h3>Notion</h3><p>Documentação de produto</p></article>
-        <article class="tool tool-azure" data-reveal tabindex="0"><div class="tool-icons"><img class="tool-icon-default" src="assets/azure.svg" alt=""><img class="tool-icon-color" src="assets/azure-color.svg" alt=""></div><h3>Azure DevOps</h3><p>Backlog e PBIs</p></article>
-        <article class="tool tool-chatgpt" data-reveal tabindex="0"><div class="tool-icons"><img class="tool-icon-default" src="assets/chatgpt.svg" alt=""><img class="tool-icon-color" src="assets/chatgpt-color.svg" alt=""></div><h3>ChatGPT</h3><p>Prompts e análise</p></article>
-        <article class="tool tool-claude" data-reveal tabindex="0"><div class="tool-icons"><img class="tool-icon-default" src="assets/claude.svg" alt=""><img class="tool-icon-color" src="assets/claude-color.svg" alt=""></div><h3>Claude Code</h3><p>Agentes e artefatos</p></article>
-        <article class="tool tool-obsidian" data-reveal tabindex="0"><div class="tool-icons"><img class="tool-icon-default" src="assets/obsidian.svg" alt=""><img class="tool-icon-color" src="assets/obsidian-color.svg" alt=""></div><h3>Obsidian</h3><p>Conhecimento e Markdown</p></article>
+    <section class="section section-contato" id="contato">
+      <header class="section-head" data-reveal>
+        <span class="section-index">§05</span>
+        <h2 class="h-small">Contato</h2>
+      </header>
+      <p class="contato-cta" data-reveal>Vamos construir <em>o produto certo</em>.</p>
+      <div class="contato-actions" data-reveal>
+        <button class="copy-email btn-big" data-email="souzamaciel.lucas@gmail.com">Copiar e-mail</button>
+        <a class="btn-big btn-ghost" href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
       </div>
     </section>
   </main>
 
-  <footer id="contato">
-    <div class="footer-top"><div><h2>Lucas Maciel</h2><p>Product Owner &amp; UX/UI Designer</p></div><nav><a href="#inicio">Início</a><a href="about.html">Sobre</a><a href="#projetos">Projetos</a></nav><div class="footer-contact"><a href="mailto:souzamaciel.lucas@gmail.com">souzamaciel.lucas@gmail.com</a><a href="https://linkedin.com/in/souza-maciel/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div>
-    <p class="copyright">© 2026 Lucas Maciel — Product Owner &amp; UX/UI Designer</p>
+  <footer class="ledger-foot">
+    <span>Última atualização — Jul 2026 · v2.0</span>
+    <span>© 2026 Lucas Maciel — Product Owner &amp; UX/UI Designer</span>
   </footer>
-  <script src="script.js?v=11"></script>
+
+  <script src="script.js?v=5"></script>
 </body>
 </html>

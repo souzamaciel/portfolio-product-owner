@@ -1,50 +1,69 @@
-const header = document.querySelector('.site-header');
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const progress = document.createElement('div');
-progress.className = 'scroll-progress';
-progress.setAttribute('aria-hidden', 'true');
-document.body.prepend(progress);
+const progresso = document.createElement('div');
+progresso.className = 'progresso';
+progresso.setAttribute('aria-hidden', 'true');
+document.body.prepend(progresso);
 
-if (toggle && nav) {
-  const setMenuOpen = open => {
-    nav.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-    document.body.classList.toggle('menu-open', open);
-  };
+let progressoTicking = false;
 
-  toggle.addEventListener('click', () => {
-    setMenuOpen(!nav.classList.contains('open'));
+function updateProgresso() {
+  const scrollable = document.documentElement.scrollHeight - innerHeight;
+  progresso.style.transform = `scaleX(${scrollable > 0 ? scrollY / scrollable : 0})`;
+  progressoTicking = false;
+}
+
+addEventListener('scroll', () => {
+  if (!progressoTicking) {
+    progressoTicking = true;
+    requestAnimationFrame(updateProgresso);
+  }
+}, { passive: true });
+updateProgresso();
+
+const heroTitle = document.querySelector('.hero-title');
+
+if (heroTitle && !reduceMotion) {
+  let wordIndex = 0;
+  heroTitle.querySelectorAll('.hero-line').forEach(line => {
+    [...line.childNodes].forEach(node => {
+      if (node.nodeType !== Node.TEXT_NODE) {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          node.classList.add('w');
+          node.style.setProperty('--wd', `${wordIndex++ * 60}ms`);
+        }
+        return;
+      }
+      const frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (!part.trim()) {
+          frag.appendChild(document.createTextNode(part));
+          return;
+        }
+        const span = document.createElement('span');
+        span.className = 'w';
+        span.style.setProperty('--wd', `${wordIndex++ * 60}ms`);
+        span.textContent = part;
+        frag.appendChild(span);
+      });
+      line.replaceChild(frag, node);
+    });
   });
+  requestAnimationFrame(() => requestAnimationFrame(() => heroTitle.classList.add('is-in')));
+}
 
-  nav.addEventListener('click', event => {
-    if (event.target.matches('a')) {
-      setMenuOpen(false);
-    }
-  });
+const ANEXO_DESIGN_WIDTH = 1100;
 
-  document.addEventListener('click', event => {
-    if (nav.classList.contains('open') && !header?.contains(event.target)) setMenuOpen(false);
-  });
-
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && nav.classList.contains('open')) {
-      setMenuOpen(false);
-      toggle.focus();
-    }
+function scaleAnexos() {
+  document.querySelectorAll('.anexo-canvas').forEach(canvas => {
+    const inner = canvas.querySelector('.anexo-scale');
+    if (inner) inner.style.transform = `scale(${canvas.clientWidth / ANEXO_DESIGN_WIDTH})`;
   });
 }
 
-const revealTargets = document.querySelectorAll(
-  '[data-reveal], .case-hero, .case-section, .decision-heading, .decision-item, .skills-section'
-);
-
-revealTargets.forEach(element => {
-  if (!element.hasAttribute('data-reveal')) element.classList.add('motion-reveal');
-});
+scaleAnexos();
+addEventListener('resize', scaleAnexos, { passive: true });
+addEventListener('load', scaleAnexos);
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -53,51 +72,41 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+}, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
 
-revealTargets.forEach(element => observer.observe(element));
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 
-const toolCards = [...document.querySelectorAll('.tool')];
-
-toolCards.forEach(card => {
-  card.setAttribute('role', 'button');
-  card.setAttribute('aria-pressed', 'false');
-
-  card.addEventListener('click', event => {
-    event.stopPropagation();
-    const shouldActivate = !card.classList.contains('is-active');
-    toolCards.forEach(tool => tool.classList.remove('is-active'));
-    card.classList.toggle('is-active', shouldActivate);
-    toolCards.forEach(tool => tool.setAttribute('aria-pressed', String(tool.classList.contains('is-active'))));
-  });
-
-  card.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      card.click();
+document.querySelectorAll('.copy-email').forEach(button => {
+  const label = button.textContent;
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.email);
+    } catch {
+      const helper = document.createElement('textarea');
+      helper.value = button.dataset.email;
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand('copy');
+      helper.remove();
     }
+    button.textContent = 'Copiado ✓';
+    button.classList.add('copied');
+    setTimeout(() => {
+      button.textContent = label;
+      button.classList.remove('copied');
+    }, 1800);
   });
 });
 
-document.addEventListener('click', () => {
-  toolCards.forEach(card => card.classList.remove('is-active'));
-  toolCards.forEach(card => card.setAttribute('aria-pressed', 'false'));
-});
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
 
-const heroTitle = document.querySelector('.hero h1');
-const portrait = document.querySelector('.portrait-wrap img');
-const parallaxImages = [...document.querySelectorAll('.project-media img:not(.case-concept-image), .case-hero img, .decision-visual img')];
 const buildStory = document.querySelector('[data-build-story]');
 const buildSteps = [...document.querySelectorAll('[data-build-step]')];
 const buildLayers = [...document.querySelectorAll('[data-build-layer]')];
 const buildCounter = document.querySelector('[data-build-counter]');
 const caseStories = [...document.querySelectorAll('[data-case-story]')];
-const stageTimers = new WeakMap();
-let ticking = false;
-
-function clamp(value, min, max) {
-  return Math.min(Math.max(value, min), max);
-}
 
 function updateProductBuild() {
   if (!buildStory || !buildSteps.length) return;
@@ -131,18 +140,21 @@ function updateProductBuild() {
     layer.classList.toggle('is-built', Number(layer.dataset.buildLayer) <= activeStep);
   });
 
-  const firstRect = buildSteps[0].getBoundingClientRect();
-  const lastRect = buildSteps[buildSteps.length - 1].getBoundingClientRect();
-  const firstCenter = firstRect.top + firstRect.height / 2;
-  const lastCenter = lastRect.top + lastRect.height / 2;
-  const buildProgress = clamp((viewportFocus - firstCenter) / Math.max(lastCenter - firstCenter, 1), 0, 1);
-  buildStory.style.setProperty('--build-progress', String(buildProgress));
+  const stage = buildStory.querySelector('.build-stage');
+  if (stage) {
+    const firstRect = buildSteps[0].getBoundingClientRect();
+    const lastRect = buildSteps[buildSteps.length - 1].getBoundingClientRect();
+    const firstCenter = firstRect.top + firstRect.height / 2;
+    const lastCenter = lastRect.top + lastRect.height / 2;
+    const buildProgress = clamp((viewportFocus - firstCenter) / Math.max(lastCenter - firstCenter, 1), 0, 1);
+    stage.style.setProperty('--stage-progress', String(buildProgress));
+  }
 }
 
 function updateCaseStories() {
   caseStories.forEach(story => {
     const steps = [...story.querySelectorAll('[data-case-decision]')];
-    const stage = story.querySelector('.decision-product-stage');
+    const stage = story.querySelector('.decision-stage');
     const scenes = [...story.querySelectorAll('[data-decision-scene]')];
     const counter = story.querySelector('[data-case-counter]');
     const caption = story.querySelector('[data-case-caption]');
@@ -162,7 +174,7 @@ function updateCaseStories() {
     });
 
     const active = steps[activeIndex];
-    const title = active.querySelector('h3')?.textContent || '';
+    const title = active.querySelector('h3, h4')?.textContent || '';
 
     if (counter) counter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(steps.length).padStart(2, '0')}`;
     if (caption && caption.textContent !== title) caption.textContent = title;
@@ -179,63 +191,31 @@ function updateCaseStories() {
       scene.setAttribute('aria-hidden', String(index !== activeIndex));
     });
 
-    const previousIndex = Number(story.dataset.activeDecision || '0');
-    if (previousIndex !== activeIndex + 1) {
-      story.dataset.activeDecision = String(activeIndex + 1);
-      stage.classList.remove('is-changing');
-      requestAnimationFrame(() => stage.classList.add('is-changing'));
-      clearTimeout(stageTimers.get(stage));
-      stageTimers.set(stage, setTimeout(() => stage.classList.remove('is-changing'), 700));
-    }
+    const firstRect = steps[0].getBoundingClientRect();
+    const lastRect = steps[steps.length - 1].getBoundingClientRect();
+    const firstCenter = firstRect.top + firstRect.height / 2;
+    const lastCenter = lastRect.top + lastRect.height / 2;
+    const stageProgress = clamp((viewportFocus - firstCenter) / Math.max(lastCenter - firstCenter, 1), 0, 1);
+    stage.style.setProperty('--stage-progress', String(stageProgress));
   });
 }
 
-function updateScrollEffects() {
-  const top = scrollY;
-  const scrollable = document.documentElement.scrollHeight - innerHeight;
-  const pageProgress = scrollable > 0 ? top / scrollable : 0;
-
-  progress.style.transform = `scaleX(${pageProgress})`;
-  if (header) header.classList.toggle('scrolled', top > 12);
-  updateProductBuild();
-  updateCaseStories();
-
-  if (!reduceMotion && innerWidth > 700) {
-    if (heroTitle) {
-      const heroProgress = clamp(top / Math.max(innerHeight, 1), 0, 1);
-      heroTitle.style.transform = `translate3d(0, ${heroProgress * -58}px, 0)`;
-      heroTitle.style.opacity = String(1 - heroProgress * 0.42);
+if (buildStory || caseStories.length) {
+  let storyTicking = false;
+  const updateStories = () => {
+    updateProductBuild();
+    updateCaseStories();
+    storyTicking = false;
+  };
+  addEventListener('scroll', () => {
+    if (!storyTicking) {
+      storyTicking = true;
+      requestAnimationFrame(updateStories);
     }
-
-    if (portrait) {
-      const rect = portrait.getBoundingClientRect();
-      const offset = clamp((innerHeight - rect.top) / (innerHeight + rect.height), 0, 1);
-      portrait.style.transform = `translate3d(0, ${(offset - 0.5) * -34}px, 0) scale(1.035)`;
-    }
-
-    parallaxImages.forEach(image => {
-      const container = image.parentElement;
-      const rect = container.getBoundingClientRect();
-      if (rect.bottom < -80 || rect.top > innerHeight + 80) return;
-      const normalized = (rect.top + rect.height / 2 - innerHeight / 2) / innerHeight;
-      image.style.setProperty('--image-parallax', `${clamp(normalized * -34, -26, 26)}px`);
-    });
-
-  }
-
-  ticking = false;
+  }, { passive: true });
+  addEventListener('resize', updateStories, { passive: true });
+  updateStories();
 }
-
-function requestScrollUpdate() {
-  if (!ticking) {
-    ticking = true;
-    requestAnimationFrame(updateScrollEffects);
-  }
-}
-
-addEventListener('scroll', requestScrollUpdate, { passive: true });
-addEventListener('resize', requestScrollUpdate, { passive: true });
-updateScrollEffects();
 
 const themeToggle = document.querySelector('.theme-toggle');
 
