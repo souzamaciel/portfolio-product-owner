@@ -308,15 +308,16 @@
 
 @media (max-width: 1000px) {
   .build-layout { grid-template-columns: 1fr; gap: 40px; }
-  .build-stage { position: sticky; top: 72px; height: 400px; z-index: 2; background: color-mix(in srgb, var(--paper-2) 96%, transparent); backdrop-filter: blur(10px); }
+  .build-stage { position: sticky; top: 72px; height: 400px; z-index: 4; background: color-mix(in srgb, var(--paper-2) 97%, transparent); backdrop-filter: blur(14px); box-shadow: 0 12px 34px rgba(0, 0, 0, .1); }
+  [data-theme="dark"] .build-stage { box-shadow: 0 12px 34px rgba(0, 0, 0, .5); }
   .product-canvas { height: 306px; }
   .build-layer { top: 40px; bottom: 14px; }
   .layer-problem { padding: 18px; }
   .layer-problem blockquote { font-size: 17px; }
   .layer-flow { top: 100px; }
   .layer-priority { width: 150px; top: 40px; }
-  .stage-steps { position: relative; z-index: 3; }
-  .stage-step { min-height: clamp(260px, 42vh, 360px); background: var(--paper); padding: 0 0 0 4px; }
+  .stage-steps { position: relative; z-index: 1; }
+  .stage-step { min-height: clamp(260px, 42vh, 360px); padding: 0 0 0 4px; }
 }
 @media (max-width: 700px) {
   .build-stage { height: 330px; top: 66px; padding: 12px; }
@@ -467,10 +468,10 @@
 
 @media (max-width: 1000px) {
   .decision-layout { grid-template-columns: 1fr; gap: 32px; }
-  .decision-stage { position: sticky; top: 72px; height: 380px; z-index: 2; background: color-mix(in srgb, var(--paper-2) 96%, transparent); backdrop-filter: blur(10px); }
+  .decision-stage { position: sticky; top: 72px; height: 380px; z-index: 4; background: color-mix(in srgb, var(--paper-2) 97%, transparent); backdrop-filter: blur(14px); box-shadow: 0 12px 34px rgba(0, 0, 0, .1); }
+  [data-theme="dark"] .decision-stage { box-shadow: 0 12px 34px rgba(0, 0, 0, .5); }
   .decision-scene-area { height: 300px; }
-  .stage-steps.decision-steps { position: relative; z-index: 3; }
-  .stage-steps.decision-steps .stage-step { background: var(--paper); }
+  .stage-steps.decision-steps { position: relative; z-index: 1; }
 }
 @media (max-width: 700px) {
   .decision-stage { top: 66px; height: 320px; padding: 12px; }
