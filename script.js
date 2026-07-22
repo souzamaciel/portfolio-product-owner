@@ -1,5 +1,29 @@
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+let userInteractedSinceLoad = false;
+['wheel', 'touchstart', 'keydown'].forEach(evt =>
+  addEventListener(evt, () => { userInteractedSinceLoad = true; }, { once: true, passive: true })
+);
+
+function scrollToHashTarget() {
+  if (!location.hash || userInteractedSinceLoad) return;
+  let target;
+  try {
+    target = document.querySelector(location.hash);
+  } catch {
+    return;
+  }
+  if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+}
+
+scrollToHashTarget();
+addEventListener('pageshow', scrollToHashTarget);
+addEventListener('load', scrollToHashTarget);
+// Reforça a posição correta por alguns segundos: alguns navegadores tentam o
+// salto nativo para a âncora tardiamente (ex.: ao interagir com view transitions),
+// sobrescrevendo a rolagem já corrigida.
+[0, 60, 150, 300, 600, 1000, 1500, 2500].forEach(delay => setTimeout(scrollToHashTarget, delay));
+
 const progresso = document.createElement('div');
 progresso.className = 'progresso';
 progresso.setAttribute('aria-hidden', 'true');
